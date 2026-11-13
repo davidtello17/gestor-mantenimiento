@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,13 +8,76 @@
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/main.js" defer></script>
 </head>
+
 <body>
     <header class="header"></header>
 
     <main class="main">
-        <section class="order-form"></section>
+        <section class="order-form">
+            <h2 class="order-form__title">Nueva orden de servicio</h2>
+            <form class="order-form__form" id="order-form">
+                <div class="order-form__field">
+                    <label for="client" class="order-form__label">Cliente</label>
+                    <input type="text" id="client" class="order-form__input" required>
+                </div>
+
+                <div class="order-form__field">
+                    <label for="type" class="order-form__label">Tipo de equipo</label>
+                    <select id="type" class="order-form__input" required>
+                        <option value="">Selecciona...</option>
+                        <option value="Motor eléctrico">Motor eléctrico</option>
+                        <option value="Variador de frecuencia">Variador de frecuencia</option>
+                        <option value="PLC">PLC</option>
+                        <option value="Fuente de alimentación">Fuente de alimentación</option>
+                        <option value="Bomba">Bomba</option>
+                        <option value="Compresor">Compresor</option>
+                        <option value="Tablero eléctrico">Tablero eléctrico</option>
+                        <option value="Otro">Otro</option>
+                    </select>
+                </div>
+
+                <div class="order-form__field">
+                    <label for="brand" class="order-form__label">Marca</label>
+                    <input type="text" id="brand" class="order-form__input" required>
+                </div>
+
+                <div class="order-form__field">
+                    <label for="serial" class="order-form__label">Serial</label>
+                    <input type="text" id="serial" class="order-form__input" required>
+                </div>
+
+                <div class="order-form__field">
+                    <label for="date" class="order-form__label">Fecha de ingreso</label>
+                    <input type="date" id="date" class="order-form__input" required>
+                </div>
+
+                <div class="order-form__field">
+                    <label for="issue" class="order-form__label">Falla reportada</label>
+                    <textarea id="issue" class="order-form__input" rows="3" required></textarea>
+                </div>
+
+                <div class="order-form__field">
+                    <label for="status" class="order-form__label">Estado</label>
+                    <select id="status" class="order-form__input" required>
+                        <option value="En revisión">En revisión</option>
+                        <option value="En reparación">En reparación</option>
+                        <option value="Listo">Listo</option>
+                        <option value="Entregado">Entregado</option>
+                    </select>
+                </div>
+
+                <div class="order-form__field">
+                    <label for="cost" class="order-form__label">Costo (USD)</label>
+                    <input type="number" id="cost" class="order-form__input" min="0" required>
+                </div>
+
+                <button type="submit" class="order-form__button">Guardar orden</button>
+            </form>
+        </section>
+
         <section class="filters"></section>
         <section class="orders"></section>
     </main>
 </body>
+
 </html>
